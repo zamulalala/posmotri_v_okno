@@ -67,9 +67,12 @@ ol {
   position: relative;
   margin-block-end: 16px;
   inline-size: 100%;
+  block-size: 386px;
 }
 
 .result__video {
+  object-fit: cover;
+  object-position: center center;
   inline-size: 100%;
   block-size: 100%;
 }
@@ -83,6 +86,7 @@ ol {
 
 .search-form__fieldset {
   border: none;
+  color: rgba(255, 255, 255, 0.70);
   min-inline-size: 225px;
 }
 
@@ -107,7 +111,7 @@ ol {
   border-left: none;
   border-block-start: 1px solid #fff;
   border-block-end: 1px solid #fff;
-  color: rgba(255, 255, 255, 0.70);
+  color: #fff;
   font-family: inherit;
   font-size: inherit;
   background-color: transparent;
@@ -162,7 +166,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -177,13 +181,13 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 37px;
   overflow: auto;
-  min-inline-size: 400px;
-  max-block-size: 300px;
+  inline-size: 400px;
+  block-size: 300px;
 }
 
 .content__list-item {
+  margin-block-end: 37px;
   max-block-size: 103px;
 }
 
@@ -192,18 +196,26 @@ ol {
 }
 
 .content__card-link {
+  display: block;
+  margin: 2px;
   color: inherit;
   text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 2px;
 }
 
 .content__video-card-title {
   margin-block-end: 10px;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -217,25 +229,20 @@ ol {
 
 .content__video-card-thumbnail {
   object-fit: cover;
+  object-position: center center;
   inline-size: 100%;
   block-size: 103px;
 }
 
 .search-form__textfield:focus,
-.search-form__label:focus,
 .button:focus,
-.content__list-item:focus,
-.content__card-link:focus,
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
 }
-
-.search-form__textfield:focus-visible,
-.search-form__label:focus-visible,
+ 
+.search-form__label:has(:focus-visible),
 .button:focus-visible,
-.content__list-item:focus-visible,
-.content__card-link:focus-visible,
-.content__video-card:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
